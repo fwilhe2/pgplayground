@@ -8,7 +8,7 @@ jobs:
   container-job:
     runs-on: ubuntu-20.04
     container:
-      image: node:14
+      image: golang
 
     services:
       postgres:
@@ -24,9 +24,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - run: npm install
-    - run: cat package-lock.json
-    - run: node client.js
+    - run: go run .
       env:
         POSTGRES_HOST: postgres
         POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }}
