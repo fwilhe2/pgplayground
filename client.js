@@ -15,3 +15,9 @@ pgclient.query('SELECT NOW()', (err, res) => {
     console.log(res)
     pgclient.end()
 });
+
+pgclient.query('SELECT version()', (err, res) => {
+    if (err) throw err
+    console.log(res)
+    pgclient.end()
+});
