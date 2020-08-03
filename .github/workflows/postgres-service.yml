@@ -24,7 +24,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - run: echo postgres > .pgpass; psql --username=postgres --dbname=postgres --file=01.sql
+    - run: echo postgres > ~/.pgpass; psql --username=postgres --dbname=postgres --file=01.sql
       env:
         PGHOST: postgres
         PGPORT: ${{ job.services.postgres.ports[5432] }}
