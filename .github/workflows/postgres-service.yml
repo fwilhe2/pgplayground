@@ -8,7 +8,7 @@ jobs:
   container-job:
     runs-on: ubuntu-20.04
     container:
-      image: golang
+      image: postgres:13
 
     services:
       postgres:
